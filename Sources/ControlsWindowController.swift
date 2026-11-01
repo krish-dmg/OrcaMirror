@@ -160,7 +160,7 @@ final class ControlsWindowController: NSWindowController {
         // Quality preset row
         qualityPopup.removeAllItems()
         qualityPopup.addItem(withTitle: "1080p Stream High Quality (1920x1080)")
-        qualityPopup.addItem(withTitle: "Native Full iPad (1718x1200)")
+        qualityPopup.addItem(withTitle: "Native Device Resolution")
         qualityPopup.addItem(withTitle: "720p Performance (1280x720)")
         qualityPopup.target = self
         qualityPopup.action = #selector(qualityChanged(_:))

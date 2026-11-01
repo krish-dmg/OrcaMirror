@@ -43,7 +43,7 @@ final class MirrorWindowController: NSWindowController, NSWindowDelegate {
         super.init(window: window)
 
         window.delegate = self
-        window.title = "OrcaMirror — KRISH’s iPad (2)"
+        window.title = "OrcaMirror"
         window.tabbingMode = .disallowed
         window.collectionBehavior = [.fullScreenPrimary, .canJoinAllSpaces]
         window.sharingType = .readOnly

@@ -93,10 +93,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         qualityMenuItem.title = "Resolution & Presets"
         let qualityMenu = NSMenu(title: "Resolution & Presets")
         qualityMenu.addItem(withTitle: "1080p Stream High Quality (1920x1080)", action: #selector(setQuality1080Action), keyEquivalent: "")
-        qualityMenu.addItem(withTitle: "Native Full iPad (1718x1200)", action: #selector(setQualityHighAction), keyEquivalent: "")
+        qualityMenu.addItem(withTitle: "Native Device Resolution", action: #selector(setQualityHighAction), keyEquivalent: "")
         qualityMenu.addItem(withTitle: "720p Performance (1280x720)", action: #selector(setQuality720Action), keyEquivalent: "")
         qualityMenu.addItem(NSMenuItem.separator())
-        qualityMenu.addItem(withTitle: "Native iPad Ratio (Non-Stretched 4:3)", action: #selector(setNativeNonStretchedAction), keyEquivalent: "8")
+        qualityMenu.addItem(withTitle: "Native Aspect Ratio (Non-Stretched)", action: #selector(setNativeNonStretchedAction), keyEquivalent: "8")
         qualityMenu.addItem(withTitle: "MacBook 16:10 Stretched (Windowed)", action: #selector(setStretchMacBookRetinaAction), keyEquivalent: "0")
         qualityMenu.addItem(withTitle: "Widescreen 16:9 Stretched (Windowed)", action: #selector(setStretchWidescreen16x9Action), keyEquivalent: "9")
         qualityMenuItem.submenu = qualityMenu
@@ -106,7 +106,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let viewMenuItem = NSMenuItem()
         viewMenuItem.title = "View"
         let viewMenu = NSMenu(title: "View")
-        viewMenu.addItem(withTitle: "Native iPad (Non-Stretched 4:3)", action: #selector(setNativeNonStretchedAction), keyEquivalent: "8")
+        viewMenu.addItem(withTitle: "Native Aspect Ratio (Non-Stretched)", action: #selector(setNativeNonStretchedAction), keyEquivalent: "8")
         viewMenu.addItem(withTitle: "MacBook 16:10 Stretched (Windowed)", action: #selector(setStretchMacBookRetinaAction), keyEquivalent: "0")
         viewMenu.addItem(withTitle: "Widescreen 16:9 Stretched (Windowed)", action: #selector(setStretchWidescreen16x9Action), keyEquivalent: "9")
         viewMenu.addItem(NSMenuItem.separator())
@@ -182,7 +182,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func aboutAction() {
         let alert = NSAlert()
         alert.messageText = "OrcaMirror"
-        alert.informativeText = "High-performance native macOS USB iPad screen mirror.\nDirect AVFoundation hardware capture with zero AirPlay overhead.\nNative 60 FPS, ultra-low latency, custom color profiles."
+        alert.informativeText = "High-performance native macOS USB iPhone & iPad screen mirror.\nDirect AVFoundation hardware capture with zero AirPlay overhead.\nNative 60 FPS, ultra-low latency, custom color profiles."
         alert.alertStyle = .informational
         alert.addButton(withTitle: "OK")
         alert.runModal()

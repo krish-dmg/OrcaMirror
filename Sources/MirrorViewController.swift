@@ -22,8 +22,8 @@ final class MirrorViewController: NSViewController {
     let previewView = VideoPreviewView()
 
     private let emptyStateContainer = NSView()
-    private let emptyTitleLabel = NSTextField(labelWithString: "No iPad Connected")
-    private let emptySubtitleLabel = NSTextField(labelWithString: "Connect your iPad via USB, unlock the screen, and trust this Mac.")
+    private let emptyTitleLabel = NSTextField(labelWithString: "No iOS Device Connected")
+    private let emptySubtitleLabel = NSTextField(labelWithString: "Connect your iPhone or iPad via USB, unlock the screen, and trust this Mac.")
     private let spinner = NSProgressIndicator()
 
     init(captureController: CaptureController) {
@@ -133,8 +133,8 @@ final class MirrorViewController: NSViewController {
     func handleStateChange(_ state: CaptureState) {
         switch state {
         case .idle:
-            emptyTitleLabel.stringValue = "No iPad Connected"
-            emptySubtitleLabel.stringValue = "Connect your iPad via USB, unlock the screen, and trust this Mac."
+            emptyTitleLabel.stringValue = "No iOS Device Connected"
+            emptySubtitleLabel.stringValue = "Connect your iPhone or iPad via USB, unlock the screen, and trust this Mac."
             emptyStateContainer.isHidden = false
             spinner.startAnimation(nil)
 
@@ -181,7 +181,7 @@ final class MirrorViewController: NSViewController {
         menu.addItem(withTitle: isFull ? "Exit Fullscreen (Esc / Cmd+F)" : "Enter Fullscreen (Cmd+F)", action: #selector(toggleFullscreenAction), keyEquivalent: "")
         menu.addItem(withTitle: "Borderless Fullscreen (Cmd+Shift+F)", action: #selector(toggleBorderlessAction), keyEquivalent: "")
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(withTitle: "Native iPad (Non-Stretched 4:3) (Cmd+8)", action: #selector(nativeNonStretchedAction), keyEquivalent: "")
+        menu.addItem(withTitle: "Native Aspect Ratio (Non-Stretched) (Cmd+8)", action: #selector(nativeNonStretchedAction), keyEquivalent: "")
         menu.addItem(withTitle: "MacBook 16:10 Stretched (Windowed) (Cmd+0)", action: #selector(macStretchAction), keyEquivalent: "")
         menu.addItem(withTitle: "Widescreen 16:9 Stretched (Windowed) (Cmd+9)", action: #selector(wideStretchAction), keyEquivalent: "")
         menu.addItem(NSMenuItem.separator())

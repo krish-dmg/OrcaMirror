@@ -1,14 +1,15 @@
 # OrcaMirror
 
-High-performance native macOS USB iPad mirroring application built directly with Apple's `AVFoundation`, `CoreMediaIO`, `AudioToolbox`, and `AppKit` frameworks.
+High-performance native macOS USB iPhone & iPad mirroring application built directly with Apple's `AVFoundation`, `CoreMediaIO`, `AudioToolbox`, and `AppKit` frameworks.
 
-Zero AirPlay overhead. Zero iPad heating. Raw 60 FPS low-latency display buffer delivery over USB with real-time hardware color grading, OBS-stabilized borderless fullscreen, and a direct-to-DAC low-latency audio engine for competitive gaming.
+Zero AirPlay overhead. Zero device heating. Raw 60 FPS low-latency display buffer delivery over USB for iPhone and iPad with real-time hardware color grading, OBS-stabilized borderless fullscreen, and a direct-to-DAC low-latency audio engine for competitive gaming.
 
 ---
 
 ## Key Features
 
-- **Zero-Stress Display Pipeline**: Bypasses RTSP/AirPlay entirely. Uses native CoreMediaIO hardware framebuffer DMA over USB. The iPad performs zero video compression, keeping the battery cool and CPU/GPU usage at baseline.
+- **Zero-Stress Display Pipeline**: Bypasses RTSP/AirPlay entirely. Uses native CoreMediaIO hardware framebuffer DMA over USB. Connected iPhones and iPads perform zero video compression, keeping the battery cool and CPU/GPU usage at baseline.
+- **Universal iPhone & iPad Support**: Seamlessly connects to any iPhone or iPad via Lightning or USB-C. Dynamically handles any native aspect ratio (4:3, 16:9, 19.5:9, etc.) and native device resolution without distortion.
 - **Ultra-Low Latency Audio Engine (25ms–45ms)**: Uses a dedicated CoreAudio Output `AudioUnit` (`kAudioUnitSubType_DefaultOutput`) paired with a lock-free power-of-two ring buffer. Delivers bit-perfect stereo sound directly to connected IEMs/headphones with active latency drift clamping.
 - **Color Grading & Presentation**: Live hardware-accelerated CoreImage saturation, brightness, contrast, and gamma controls with instant presets (Vibrant, Esports Clarity, Cinematic, sRGB Accurate).
 - **OBS Studio Optimization**: Space-persistent borderless fullscreen and static window titles prevent ScreenCaptureKit hook drops during live streaming.
@@ -67,15 +68,16 @@ The build script compiles all Swift sources with `-O` release optimizations, lin
 
 ## OBS Studio Setup for Streaming
 
-1. Launch **OrcaMirror** with your iPad connected via USB.
-2. In **OBS Studio**, click `+` under **Sources** and add **macOS Screen Capture**.
-3. Configure the source:
+1. Connect your iPhone or iPad via USB cable, unlock the device, and tap "Trust This Computer" if prompted.
+2. Launch **OrcaMirror** on your Mac.
+3. In **OBS Studio**, click `+` under **Sources** and add **macOS Screen Capture**.
+4. Configure the source:
    - **Method**: Select **Window Capture**.
    - **Window**: Choose `[OrcaMirror] OrcaMirror — [Your Device Name]`.
-4. For stretched or full view:
+5. For stretched or full view:
    - In OrcaMirror: Select **Stretch to Window** or **Aspect Fill** from the Controls panel (`Cmd + ,`) and toggle Fullscreen (`Cmd + F`).
    - In OBS: Right-click the source > **Transform** > **Stretch to Screen** (`Command + S`) or **Fit to Screen** (`Command + F`).
-5. In OBS, add **Application Audio Capture** targeted at `OrcaMirror` to capture live iPad game audio with zero delay.
+6. In OBS, add **Application Audio Capture** targeted at `OrcaMirror` to capture live iPhone/iPad game audio with zero delay.
 
 ---
 
