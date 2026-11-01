@@ -1,0 +1,20 @@
+# Build artifacts
+build/
+*.app
+*.dSYM
+*.o
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor files
+*.swp
+*~
+.idea/
+.vscode/
+
+# Logs and profiling
+*.log
+*.sample.txt
